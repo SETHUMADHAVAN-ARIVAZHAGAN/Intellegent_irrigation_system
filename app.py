@@ -36,19 +36,6 @@ df['Temperature (M - OFF)']=df['field4']
 
 
 df1=df.drop(['field1','entry_id','created_at','field2','field3','field4','field5','field6'],axis=1)
-
-df=pd.DataFrame(df)
-
-df['Date and Time']=df['created_at']
-df['Humidity (M - ON) ']=df['field5']
-df['Humidity (M - OFF)']=df['field6']
-df['Moisture (M - ON)']=df['field1']
-df['Moisture (M - OFF)']=df['field2']
-df['Temperature (M - ON)']=df['field3']
-df['Temperature (M - OFF)']=df['field4']
-
-
-df1=df.drop(['field1','entry_id','created_at','field2','field3','field4','field5','field6'],axis=1)
 # humidity_1=h['field5'].iloc[0]
 # humidity_2=h['field5'].iloc[1]
 # humidity_3=h['field5'].iloc[1]
@@ -134,6 +121,7 @@ st.markdown(f'<p style="color:#33ff33;font-size:32px;border-radius:2%;">{"INTELL
 # col1.metric("", hum_3, "")
 # st.markdown("""---""")
 st.table(df1)
+st.table(df2)
 # st.button("ON/OFF")
 # st.subheader("MOTOR CURRENT STATUS:")
 # motor="OFF"
