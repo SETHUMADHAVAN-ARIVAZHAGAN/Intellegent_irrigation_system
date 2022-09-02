@@ -26,12 +26,13 @@ print(df.head(10))
 # df = pd.DataFrame(ws.get_all_records())
 df=pd.DataFrame(df)
 
-df['Humidity High']=df['field5']
-df['Humidity Low']=df['field6']
-df['Moisture High']=df['field1']
-df['Moisture Low']=df['field2']
-df['Temperature High']=df['field3']
-df['Temperature Low']=df['field4']
+df['Humidity (M - ON) ']=df['field5']
+df['Humidity (M - OFF)']=df['field6']
+df['Moisture (M - ON)']=df['field1']
+df['Moisture (M - OFF)']=df['field2']
+df['Temperature (M - ON)']=df['field3']
+df['Temperature (M - OFF)']=df['field4']
+df['Date and Time']=df['created_at']
 
 df1=df.drop(['field1','entry_id','created_at','field2','field3','field4','field5','field6'],axis=1)
 # humidity_1=h['field5'].iloc[0]
