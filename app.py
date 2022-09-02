@@ -121,7 +121,6 @@ st.markdown(f'<p style="color:#33ff33;font-size:32px;border-radius:2%;">{"INTELL
 # col1.metric("", hum_3, "")
 # st.markdown("""---""")
 st.table(df1)
-st.table(df2)
 # st.button("ON/OFF")
 # st.subheader("MOTOR CURRENT STATUS:")
 # motor="OFF"
