@@ -24,92 +24,102 @@ print(df.head(10))
 
 # ws = sh.worksheet('sample')
 # df = pd.DataFrame(ws.get_all_records())
-h=df.tail(3)
-humidity_1=h['field5'].iloc[0]
-humidity_2=h['field5'].iloc[1]
-humidity_3=h['field5'].iloc[1]
+df=pd.DataFrame(df)
 
-hum_1=h['field6'].iloc[0]
-hum_2=h['field6'].iloc[1]
-hum_3=h['field6'].iloc[1]
+df['Humidity High']=df['field5']
+df['Humidity Low']=df['field6']
+df['Moisture High']=df['field1']
+df['Moisture Low']=df['field2']
+df['Temperature High']=df['field3']
+df['Temperature Low']=df['field4']
 
-m_1=h['field1'].iloc[0]
-m_2=h['field1'].iloc[1]
-m_3=h['field1'].iloc[1]
+df1=df.drop(['field1','entry_id','created_at','field2','field3','field4','field5','field6'],axis=1)
+# humidity_1=h['field5'].iloc[0]
+# humidity_2=h['field5'].iloc[1]
+# humidity_3=h['field5'].iloc[1]
 
-mo_1=h['field2'].iloc[0]
-mo_2=h['field2'].iloc[1]
-mo_3=h['field2'].iloc[1]
+# hum_1=h['field6'].iloc[0]
+# hum_2=h['field6'].iloc[1]
+# hum_3=h['field6'].iloc[1]
 
-temp_1=h['field3'].iloc[0]
-temp_2=h['field3'].iloc[1]
-temp_3=h['field3'].iloc[1]
+# m_1=h['field1'].iloc[0]
+# m_2=h['field1'].iloc[1]
+# m_3=h['field1'].iloc[1]
 
-tem_1=h['field4'].iloc[0]
-tem_2=h['field4'].iloc[1]
-tem_3=h['field4'].iloc[1]
+# mo_1=h['field2'].iloc[0]
+# mo_2=h['field2'].iloc[1]
+# mo_3=h['field2'].iloc[1]
+
+# temp_1=h['field3'].iloc[0]
+# temp_2=h['field3'].iloc[1]
+# temp_3=h['field3'].iloc[1]
+
+# tem_1=h['field4'].iloc[0]
+# tem_2=h['field4'].iloc[1]
+# tem_3=h['field4'].iloc[1]
 # st.write(humidity)
 # st.header("Intelligent Rain Prediction Irrigation System")
 st.markdown(f'<p style="color:#33ff33;font-size:32px;border-radius:2%;">{"INTELLIGENT RAIN PREDICTION IRRIGATION SYSTEM"}</p>', unsafe_allow_html=True)
 
-st.markdown("""---""")
-col1,col2=st.columns(2)
-col1.subheader("MOISTURE")
-col2.subheader("MOISTURE")
-col1,col2=st.columns(2)
-col1.write("MOTOR ON")
-col2.write("MOTOR OFF")
-col1, col2,  = st.columns(2)
-col2.metric("", m_1, "")
-col1.metric("", mo_1, "")
-col1, col2,  = st.columns(2)
-col2.metric("", m_2, "")
-col1.metric("", mo_2, "")
-col1, col2,  = st.columns(2)
-col2.metric("", m_3, "")
-col1.metric("", mo_3, "")
-st.markdown("""---""")
+# st.markdown("""---""")
+# col1,col2=st.columns(2)
+# col1.subheader("MOISTURE")
+# col2.subheader("MOISTURE")
+# col1,col2=st.columns(2)
+# col1.write("MOTOR ON")
+# col2.write("MOTOR OFF")
+# col1, col2,  = st.columns(2)
+# col2.metric("", m_1, "")
+# col1.metric("", mo_1, "")
+# col1, col2,  = st.columns(2)
+# col2.metric("", m_2, "")
+# col1.metric("", mo_2, "")
+# col1, col2,  = st.columns(2)
+# col2.metric("", m_3, "")
+# col1.metric("", mo_3, "")
+# st.markdown("""---""")
 
-col1,col2=st.columns(2)
-col1.subheader("TEMPERATURE")
-col2.subheader("TEMPERATURE")
-col1,col2=st.columns(2)
-col1.write("MOTOR ON")
-col2.write("MOTOR OFF")
-
-# st.subheader("Mositure")
-col1, col2,  = st.columns(2)
-col2.metric("", temp_1, "")
-col1.metric("", tem_1, "")
-col1, col2,  = st.columns(2)
-col2.metric("", temp_2, "")
-col1.metric("", tem_2, "")
-col1, col2,  = st.columns(2)
-col2.metric("", temp_3, "")
-col1.metric("", tem_3, "")
-st.markdown("""---""")
-
-
-col1,col2=st.columns(2)
-col1.subheader("HUMIDITY")
-col2.subheader("HUMIDITY")
-col1,col2=st.columns(2)
-col1.write("MOTOR ON")
-col2.write("MOTOR OFF")
+# col1,col2=st.columns(2)
+# col1.subheader("TEMPERATURE")
+# col2.subheader("TEMPERATURE")
+# col1,col2=st.columns(2)
+# col1.write("MOTOR ON")
+# col2.write("MOTOR OFF")
 
 # st.subheader("Mositure")
-# st.subheader("Mositure")
-col1, col2,  = st.columns(2)
-col2.metric("", humidity_1, "")
-col1.metric("", hum_1, "")
-col1, col2,  = st.columns(2)
-col2.metric("", humidity_2, "")
-col1.metric("", hum_2, "")
-col1, col2,  = st.columns(2)
-col2.metric("", humidity_3, "")
-col1.metric("", hum_3, "")
-st.markdown("""---""")
+# col1, col2,  = st.columns(2)
+# col2.metric("", temp_1, "")
+# col1.metric("", tem_1, "")
+# col1, col2,  = st.columns(2)
+# col2.metric("", temp_2, "")
+# col1.metric("", tem_2, "")
+# col1, col2,  = st.columns(2)
+# col2.metric("", temp_3, "")
+# col1.metric("", tem_3, "")
+# st.markdown("""---""")
 
+
+# col1,col2=st.columns(2)
+# col1.subheader("HUMIDITY")
+# col2.subheader("HUMIDITY")
+# col1,col2=st.columns(2)
+# col1.write("MOTOR ON")
+# col2.write("MOTOR OFF")
+
+# st.subheader("Mositure")
+# st.subheader("Mositure")
+# col1, col2,  = st.columns(2)
+# col2.metric("", humidity_1, "")
+# col1.metric("", hum_1, "")
+# col1, col2,  = st.columns(2)
+# col2.metric("", humidity_2, "")
+# col1.metric("", hum_2, "")
+# col1, col2,  = st.columns(2)
+# col2.metric("", humidity_3, "")
+# col1.metric("", hum_3, "")
+# st.markdown("""---""")
+st.table(df1)
+# st.button("ON/OFF")
 # st.subheader("MOTOR CURRENT STATUS:")
 # motor="OFF"
 # if motor=="ON":
@@ -135,4 +145,4 @@ st.markdown("""---""")
 # st.markdown("""---""")
 
 
-st.write("Done by:  DARK")
+# st.write("Done by:  DARK")
