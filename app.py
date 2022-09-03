@@ -129,6 +129,7 @@ st.markdown(f'<p style="color:#33ff33;font-size:32px;border-radius:2%;">{"INTELL
 # col2.metric("", humidity_3, "")
 # col1.metric("", hum_3, "")
 # st.markdown("""---""")
+st.markdown(f'<p style="color:#FF0000;font-size:32px;border-radius:2%;">{"TYPE OF THE CROP: PADDY"}</p>', unsafe_allow_html=True)
 st.subheader('TYPE OF CROP: PADDY')
 st.table(df1)
 # st.button("ON/OFF")
