@@ -27,12 +27,12 @@ print(df.head(10))
 df=pd.DataFrame(df)
 
 df['Date and Time']=df['created_at']
-df['Humidity (M - ON) ']=df['field5']
-df['Humidity (M - OFF)']=df['field6']
-df['Moisture (M - ON)']=df['field1']
-df['Moisture (M - OFF)']=df['field2']
-df['Temperature (M - ON)']=df['field3']
-df['Temperature (M - OFF)']=df['field4']
+df['Humidity (M - OFF) ']=df['field5']
+df['Humidity (M - ON)']=df['field6']
+df['Moisture (M - OFF)']=df['field1']
+df['Moisture (M - ON)']=df['field2']
+df['Temperature (M - OFF)']=df['field3']
+df['Temperature (M - ON)']=df['field4']
 
 
 df1=df.drop(['field1','entry_id','created_at','field2','field3','field4','field5','field6','field7','field8'],axis=1)
