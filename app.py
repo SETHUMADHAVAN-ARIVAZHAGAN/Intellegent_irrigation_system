@@ -25,17 +25,26 @@ print(df.head(10))
 # ws = sh.worksheet('sample')
 # df = pd.DataFrame(ws.get_all_records())
 df=pd.DataFrame(df)
+def date_(x):
+  return x.split("T")[0]
+def time_(x):
+       return x.split("T")[1]
+def timex(x):
+       return x.split("Z")[0]
 
-df['Date and Time']=df['created_at']
-df['Humidity (M - OFF) ']=df['field5']
-df['Humidity (M - ON)']=df['field6']
-df['Moisture (M - OFF)']=df['field1']
-df['Moisture (M - ON)']=df['field2']
-df['Temperature (M - OFF)']=df['field3']
-df['Temperature (M - ON)']=df['field4']
-
-
-df1=df.drop(['field1','entry_id','created_at','field2','field3','field4','field5','field6','field7','field8'],axis=1)
+df["Date"]=df['created_at'].apply(date_)
+df["Time1"]=df['created_at'].apply(time_)
+df["Time"]=df['Time1'].apply(timex)
+df['Humidity OFF']=df['field5']
+df['Humidity ON']=df['field6']
+df['Moisture OFF']=df['field1']
+df['Moisture ON']=df['field2']
+df['Temperature OFF']=df['field3']
+df['Temperature ON']=df['field4']
+df["Date"]=df['created_at'].apply(date_)
+df["Time1"]=df['created_at'].apply(time_)
+df["Time"]=df['Time1'].apply(timex)
+df1=df.drop(['field1','entry_id','created_at','field2','field3','field4','field5','field6','Time1','field7','field8'],axis=1)
 # humidity_1=h['field5'].iloc[0]
 # humidity_2=h['field5'].iloc[1]
 # humidity_3=h['field5'].iloc[1]
